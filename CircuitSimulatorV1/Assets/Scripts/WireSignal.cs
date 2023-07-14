@@ -4,36 +4,41 @@ using UnityEngine;
 
 public class WireSignal : MonoBehaviour
 {
-   // public bool positiveSignal = false;
-   // public bool negativeSignal = false;
+    public bool positiveSignal = false;
+    public bool negativeSignal = false;
     public bool isConnected = false;
     public AudioSource connectFX;
     public GameObject selfWire;
 
-    void OnCollisionEnter(Collision collision)
+    
+
+    void OnTriggerStay(Collider collider)
     {
-        connectFX.Play();
-        isConnected = true;
-        GameObject other = collision.gameObject;
-        if (other.GetComponent<SignalState>().positiveSignal == true)
+        
+        if(collider.gameObject.tag == "PositiveSignal" || collider.gameObject.tag == "PositiveWire")
         {
             connectFX.Play();
-            selfWire.GetComponent<SignalState>().positiveSignal = true;
-            Debug.Log("test");
-            //Debug.Log(positiveSignal);
+            gameObject.tag = "PositiveWire";
+            isConnected = true;
+            positiveSignal = true;
         }
-        /*else if (Collision.gameObject.GetComponent<TestSifnal.negativeSignal>() == true)
+        else if(collider.gameObject.tag == "NegativeSignal" || collider.gameObject.tag == "NegativeWire")
         {
+            gameObject.tag = "NegitiveWire";
+            isConnected = true;
             negativeSignal = true;
-        }*/
+        }
+        
     }
 
-   /* void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider collider)
     {
-        isConnected=false;
-        positiveSignal=false;
-        negativeSignal=false;
-    }*/
-
+        gameObject.tag = "Untagged";
+        isConnected = false;
+        positiveSignal = false;
+        negativeSignal = false;
+    }
     
 }
+
+
