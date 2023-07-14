@@ -7,7 +7,7 @@ public class WireSignal : MonoBehaviour
     public bool positiveSignal = false;
     public bool negativeSignal = false;
     public bool isConnected = false;
-    public AudioSource connectFX;
+    //public AudioSource connectFX;
     public GameObject selfWire;
 
     
@@ -17,14 +17,14 @@ public class WireSignal : MonoBehaviour
         
         if(collider.gameObject.tag == "PositiveSignal" || collider.gameObject.tag == "PositiveWire")
         {
-            connectFX.Play();
+            //connectFX.Play();
             gameObject.tag = "PositiveWire";
             isConnected = true;
             positiveSignal = true;
         }
         else if(collider.gameObject.tag == "NegativeSignal" || collider.gameObject.tag == "NegativeWire")
         {
-            gameObject.tag = "NegitiveWire";
+            gameObject.tag = "NegativeWire";
             isConnected = true;
             negativeSignal = true;
         }
