@@ -19,5 +19,7 @@ public class BulbNegativeTerminal : MonoBehaviour
     void OnTriggerExit(Collider collider)
     {
         activeNegative = false;
+        bulb.checkNegativeSignal = false;
+        bulb.isGlow = false;
     }
 }
