@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PositiveSignal
+  - PositiveWire
+  - NegativeSignal
+  - NegativeWire
+  - Plug
   layers:
   - Default
   - TransparentFX
