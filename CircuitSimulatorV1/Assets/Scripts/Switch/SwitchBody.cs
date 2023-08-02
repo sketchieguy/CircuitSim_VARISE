@@ -13,6 +13,7 @@ public class SwitchBody : MonoBehaviour
         if (collider.gameObject.tag == "Plug")
         {
             switchOn = true;
+            Debug.Log("switch on");
         }
     }
     void OnTriggerExit(Collider collider)
