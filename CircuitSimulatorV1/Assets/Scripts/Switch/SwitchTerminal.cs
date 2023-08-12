@@ -9,15 +9,17 @@ public class SwitchTerminal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameObject.GetComponent<WireSignal>().enabled = false;
+        //gameObject.GetComponent<WireSignal>().enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.GetChild(0).gameObject.SetActive(false);
         if(switchBody.switchOn == true)
         {
-            gameObject.GetComponent<WireSignal>().enabled = true;
+            transform.GetChild(0).gameObject.SetActive(false);
+            //gameObject.GetComponent<WireSignal>().enabled = true;
         }
         /*else
         {

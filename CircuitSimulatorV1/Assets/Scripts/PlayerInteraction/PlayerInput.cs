@@ -5,6 +5,10 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     Vector3 mousePosition;
+    //public Vector3 targetPos;
+    //transform.position = new Vector3(Mathf.Round(mousePosition.x), Mathf.Round(mousePosition.y), Mathf.Round(mousePosition.z));
+    
+    
 
     private Vector3 GetMousePos()
     {
